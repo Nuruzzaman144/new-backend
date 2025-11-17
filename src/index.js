@@ -1,30 +1,59 @@
-const express = require('express')
-require('dotenv').config()
 
-const app = express()
-const port = 3000
+import connectDB from "./db/index.js";
+import dotenv from 'dotenv'
 
-const user = {
-    id: 1,
-    name: "Nuruzzaman",
-    email: "nuruzzaman@example.com",
-    age: 22,
-    skills: ["javascript", "nodejs", "express"],
-    active: true
-  };
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+dotenv.config({
+  path:'./env'
 })
-app.get('/twitter',(req,res)=>{
-    res.send("Nuruzzaman")
-})
-app.get('/login',(req,res)=>{
-    res.send('<h1>Please login at Nuruzz portfolio</h1>')
-})
-app.get('/nuru',(req,res)=>{
-    res.json(user);
-})
-app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
+
+
+connectDB()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// (async ()=>{
+//   try {
+//     mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
+//     app.on("error",(error)=>{
+//       console.log("Error:",error);
+//       throw error
+//     })
+//     app.listen(process.env.PORT,()=>{
+//       console.log(`App is listening on port ${process.env.PORT}`);
+//     })
+
+//   } catch (error) {
+//    console.error("Error: ",error)
+//    throw error    
+//   }
+
+// })()
+
+
