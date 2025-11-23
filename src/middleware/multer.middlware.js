@@ -6,10 +6,13 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
+    console.log("REQ HIT ✅");
+console.log("FILES >>>", req.files);
   },
 });
 
+
 export const upload = multer({
-     storage: storage,
+     storage,
     
 });
